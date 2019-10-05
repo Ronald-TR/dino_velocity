@@ -1,14 +1,14 @@
 
 # Dinossaurs speed calculator
 
-![version](https://img.shields.io/badge/Dinossaurs_speed_calculator--brightgreen.svg)  ![tests](https://img.shields.io/badge/tests-failing-red.svg) ![license](https://img.shields.io/badge/license-MIT-green.svg)
+![version](https://img.shields.io/badge/Dinossaurs_speed_calculator-v0.0.1-brightgreen.svg)  ![tests](https://img.shields.io/badge/tests-passing-green.svg) ![license](https://img.shields.io/badge/license-MIT-green.svg)
 
 ## :house: [Homepage]()
 
 
 
 ## Installation
-
+pip install -r requirements.txt
     
 
 ## Test Command
