@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       MUST_TEST: ${{ fromJSON('["true", "false"]')[github.event.inputs.flagTest == 'false'] }}
-    if: env.MUST_TEST
+
     steps:
       - name: Print flagTest
         run: |
