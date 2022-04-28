@@ -9,9 +9,10 @@ on:
         description: 'Run integration tests pipeline in Staging before deploy to production'
         required: false
         type: boolean
+        default: true
 
 env:
-  MUST_TEST: ${{ github.event.inputs.flagTest == true && true || false }}
+  MUST_TEST: ${{ [ github.event.inputs.flagTest == true ] && true || false }}
 
 jobs:
   foo:
