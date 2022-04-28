@@ -16,8 +16,8 @@ env:
 jobs:
   foo:
     runs-on: ubuntu-latest
-    if: MUST_TEST
+    # if: ${{ env.MUST_TEST }}
     steps:
       - name: Print flagTest
         run: |
-          echo '${{ github.event.inputs.flagTest }} echoed!'
+          echo '${{ env.MUST_TEST }} echoed!'
