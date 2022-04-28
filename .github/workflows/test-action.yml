@@ -12,12 +12,12 @@ on:
         default: true
 
 env:
-  MUST_TEST: ${{ fromJSON('["false", "true"]')[github.event.inputs.flagTest == 'true'] }}
+  MUST_TEST: ${{ fromJSON('["true", "false"]')[github.event.inputs.flagTest == 'false'] }}
 
 jobs:
   foo:
     runs-on: ubuntu-latest
-    if: ${MUST_TEST}
+    if: $MUST_TEST
     steps:
       - name: Print flagTest
         run: |
