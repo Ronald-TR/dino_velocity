@@ -15,6 +15,11 @@ env:
   MUST_TEST: ${{ fromJSON('["true", "false"]')[github.event.inputs.flagTest == 'false'] }}
 
 jobs:
+  aah:
+    runs-on: ubuntu-latest
+    steps:
+      - name:  Just echo
+        run: echo 'echoing nothing but success'
   foo:
     runs-on: ubuntu-latest
     env:
@@ -23,5 +28,6 @@ jobs:
     steps:
       - name: Print flagTest
         run: |
+          echo '${{ success() }}'
           echo '${{ env.MUST_TEST }} env echoed!'
           echo '${{ github.event.inputs.flagTest }} flag echoed!'
