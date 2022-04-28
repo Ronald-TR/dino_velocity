@@ -10,11 +10,12 @@ on:
         required: false
         type: boolean
         default: true
-
+env:
+  MUST_TEST: ${{ github.event.inputs.flagTest == true && true || false }}
 jobs:
   foo:
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.flagTest }}
+    if: ${{ env.MUST_TEST }}
     steps:
       - name: Print flagTest
         run: |
