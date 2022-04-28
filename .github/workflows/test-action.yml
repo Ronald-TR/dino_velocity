@@ -12,7 +12,7 @@ on:
         default: true
 
 env:
-  MUST_TEST: "${{ github.event.inputs.flagTest == true && true || false }}"
+  MUST_TEST: "${{ ! -z github.event.inputs.flagTest+x }}"
 
 jobs:
   foo:
