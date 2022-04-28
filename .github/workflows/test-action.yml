@@ -1,0 +1,20 @@
+name: Test Action
+
+on:
+  push:
+
+  workflow_dispatch:
+    inputs:
+      flagTest:
+        description: 'Run integration tests pipeline in Staging before deploy to production'
+        required: false
+        type: boolean
+        default: true
+
+jobs:
+  foo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print flagTest
+        run: |
+          echo ${{ github.event.inputs.flagTest }}:" echoed!"
