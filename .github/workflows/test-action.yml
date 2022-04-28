@@ -14,7 +14,8 @@ on:
 jobs:
   foo:
     runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.flagTest }}
     steps:
       - name: Print flagTest
         run: |
-          echo ${{ github.event.inputs.flagTest }}:" echoed!"
+          echo '${{ github.event.inputs.flagTest }} echoed!'
