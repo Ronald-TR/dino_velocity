@@ -12,7 +12,7 @@ on:
         default: true
 
 env:
-  MUST_TEST: fromJSON('{"false": "false", "true": "true"}')[github.event.inputs.flagTest == 'true']
+  MUST_TEST: ${{ fromJSON('{"false": "false", "true": "true"}')[github.event.inputs.flagTest == 'true'] }}
 
 jobs:
   foo:
