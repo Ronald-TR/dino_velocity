@@ -28,6 +28,6 @@ jobs:
     steps:
       - name: Print flagTest
         run: |
-          echo '${{ success() }}'
+          echo '${{ github.action_status }}'
           echo '${{ env.MUST_TEST }} env echoed!'
           echo '${{ github.event.inputs.flagTest }} flag echoed!'
