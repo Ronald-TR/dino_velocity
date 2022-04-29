@@ -18,12 +18,12 @@ jobs:
   aah:
     runs-on: ubuntu-latest
     steps:
-      - name:  Just echo
-        run: echo 'echoing nothing but success'
+      - name:  Just echo error
+        run: echo 'echoing nothing but success' && exit 1
   foo:
     runs-on: ubuntu-latest
-    env:
-      MUST_TEST: ${{ fromJSON('["true", "false"]')[github.event.inputs.flagTest == 'false'] }}
+    environment:
+      name: production
 
     steps:
       - name: Print flagTest
