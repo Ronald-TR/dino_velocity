@@ -28,6 +28,8 @@ jobs:
     steps:
       - name: Print flagTest
         run: |
-          echo '${{ job.status }}'
-          echo '${{ env.MUST_TEST }} env echoed!'
-          echo '${{ github.event.inputs.flagTest }} flag echoed!'
+          if [ ${{ github.event.inputs.flagTest = false }} || ! ${{ job.status = 'success' }} ]; then
+            SKIPPED_MESSAGE=${{ github.event.sender.login }}:" also skipped the tests. :thisisfine:"
+          fi
+
+          echo "${SKIPPED_MESSAGE} echoed!"
