@@ -28,10 +28,11 @@ jobs:
 
     steps:
       - name: Print flagTest
+        env:
+            NEEDS_CONTEXT: ${{ toJSON(needs) }}
         run: |
           # if [ ${{ github.event.inputs.flagTest == false }} || ${{ job.status == 'success' }} ]; then
           #   SKIPPED_MESSAGE=${{ github.event.sender.login }} also skipped the tests. :thisisfine:
           # fi
 
-          # echo "${SKIPPED_MESSAGE} echoed!"
-          echo "status":${{ needs.aah.result }} ${{ needs.aah.status }} ${{ needs.aah }}
+          echo "$NEEDS_CONTEXT"
