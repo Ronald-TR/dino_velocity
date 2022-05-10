@@ -34,4 +34,4 @@ jobs:
           # fi
 
           # echo "${SKIPPED_MESSAGE} echoed!"
-          echo "status":${{ needs.aah.result }}
+          echo "status":${{ needs.aah.result }} ${{ needs.aah.status }} ${{ needs.aah }}
