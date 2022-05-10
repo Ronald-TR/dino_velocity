@@ -34,4 +34,4 @@ jobs:
           fi
 
           echo "${SKIPPED_MESSAGE} echoed!"
-          echo ${{ jobs.aah.status }}
+          echo ${{ github.job.aah.status }}
