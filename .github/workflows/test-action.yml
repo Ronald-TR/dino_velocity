@@ -17,7 +17,7 @@ env:
 jobs:
   aah:
     runs-on: ubuntu-latest
-    if: ${{ false }}
+    # if: ${{ false }}
     steps:
       - name:  Just echo error
         run: echo 'echoing nothing but success' && exit 1
