@@ -17,13 +17,14 @@ env:
 jobs:
   aah:
     runs-on: ubuntu-latest
+    if: ${{ false }}
     steps:
       - name:  Just echo error
         run: echo 'echoing nothing but success' && exit 1
   foo:
     runs-on: ubuntu-latest
-    environment:
-      name: production
+    # environment:
+    #   name: production
 
     steps:
       - name: Print flagTest
@@ -33,3 +34,4 @@ jobs:
           fi
 
           echo "${SKIPPED_MESSAGE} echoed!"
+          echo ${{ job.aah.status }}
