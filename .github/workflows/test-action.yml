@@ -30,8 +30,8 @@ jobs:
       - name: Print flagTest
         run: |
           if [ ${{ github.event.inputs.flagTest == false }} || ${{ job.status == 'success' }} ]; then
-            SKIPPED_MESSAGE=${{ github.event.sender.login }}:" also skipped the tests. :thisisfine:"
+            SKIPPED_MESSAGE=${{ github.event.sender.login }} also skipped the tests. :thisisfine:
           fi
 
           echo "${SKIPPED_MESSAGE} echoed!"
-          echo ${{ job.aah.status }}
+          echo ${{ jobs.aah.status }}
